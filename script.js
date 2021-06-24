@@ -23,97 +23,129 @@ if(possuiGraduacao){
     console.log('Olámundo')
 }
 */
-/*
-function areaQuadrado(lado){
+//Funções
+//Declara a função
+function areaQuadrado(lado) {
     return lado * lado
 }
-
-console.log(areaQuadrado(10))//sempre usar "()"parentenses para exevutar a função
-
-function imc(peso, altura){
+//ativo a função
+console.log(areaQuadrado(4));
+//Parametros no caso são altura e peso
+//E argumentos são os valores quando executamos a função no caso 90, 180
+function imc(peso, altura) {
     var imc = peso / (altura * altura)
     return imc
 }
 
-console.log(imc(80, 1.83))
+console.log(imc(90, 1.80))
 
-addEventListener('click', function(){console.log('clicou')})
+//FUnção de cor favorita
 
-function faltaVisitar(paisesVisitados){
-    var totalPaises = 193
-    return `Falta visitar ${totalPaises - paisesVisitados} paises`
-}
-faltaVisitar(20)*/
-
-function verficarValor (dado){
-    return !!dado;
-}
-
-/*Objetos */
-//sempre usar chaves e valor ex:
-
-var pessoa = {
-    nome: 'Junior',
-    idade: '29'
-}
-
-//é uma propriedade que possui uma função no local do seu valor.
-
-var quadrado = {
-    lados: 4,
-    area (lado){
-        return lado * lado
-    },
-    perimetro (lado){
-        return this.lados * lado    
+function corFavorita(cor) {
+    if (cor == 'azul') {
+        return 'Eu gosto do céu'
+    } else if (cor == 'verde') {
+        return "eu não gosto de verde"
+    } else {
+        return 'Eu não gosto de cores'
     }
 }
-console.log(quadrado.area(5))
-console.log(quadrado.perimetro(5))
+//Os parametros são digitados no browser
 
-//metodos math
-console.log(Math.random())
+//Argumentos podem ser funções
+addEventListener('click', function () {
+    console.log('oi')
+})
 
-//criando objeto 2
-var menu = {
-    width: 800,
-    height: 50,
-    backgroundColor: '#000',
-    cpf: '123.333',
+//QUando não definimos o valor a função retorna udefined
+
+function imc2(peso, altura) {
+    const imc = peso / (altura ** 2);
+    console.log(imc)
 }
-//vocÊ pode adcionar novas propriedades e metodos tbm
+imc2(20, 30.9);
 
-menu.backgroundColor = 'blue'
-//novos parametros
-menu.color = 'red'
+//Uma função pode retornar qualquer valor
 
-
-//atribuir a uma variavel
-var bg = menu.backgroundColor
-var cpf = menu.cpf
-
-//exercicio 
-
-var dadosPessoais = {
-    nome: 'Junior',
-    sobrenome: 'Rijo',
-    idade: '23',
-    cidade:'São paudlo',
+//função terceira idade
+function terceiraIdade(idade) {
+    if (typeof idade !== 'number') {
+        return 'Por favor digite seu número'
+    } else if (idade >= 60) {
+        return true;
+    } else {
+        return false
+    }
 }
 
-dadosPessoais.nomeCompleto = function(){
-    return `${this.nome} ${this.sobrenome}`
+console.log(terceiraIdade(60))
+
+//variaveis e funções definidas dentros de um bloco {} não são visiveis fora dele.
+
+function faltaVisitar(paisesVisitados) {
+    var totalPaise = 193;
+    return `Faltam visitar ${totalPaise - paisesVisitados}`
+
 }
 
-var idade = 18 
+//Exercicios 
+// Crie uma função para verificar se um valor é Truthy res-> utiliza o !! para verificação do parametro chamado dado
 
-var podeBeber
-podeBeber = (idade >= 18 ) ? 'Pode Beber' : 'Probido';
+function verificaValor(dado) {
+    return !!dado;
+}
+// Crie uma função matemática que retorne o perímetro de um quadr
+// lembrando: perímetro é a soma dos quatro lados do quadrado
+function perimetroQuadrado(area) {
+    return area * 4;
+}
+perimetroQuadrado(4);
+// Crie uma função que retorne o seu nome completo
+// ela deve possuir os parâmetros: nome e sobrenome
 
-console.log(podeBeber)
+function nomeCompleto(nome, sobrenome) {
+    return `${nome} + ${sobrenome}`;
+}
+// Crie uma função que verifica se um número é par
+function isEven(numero) {
+    var modulo = numero % 2;
+    if (modulo === 0) {
+        return 'O número é par';
+    } else {
+        return 'é impar'
+    }
+}
+// Crie uma função que retorne o tipo de
+// dado do argumento passado nela (typeof)
+function tipoDado(dado) {
+    return typeof dado;//retorna o tipo dado do para 'dado'.
+}
+// addEventListener é uma função nativa do JavaScript
+// o primeiro parâmetro é o evento que ocorre e o segundo o Callb
+// utilize essa função para mostrar no console o seu nome complet
+// quando o evento 'scroll'
+addEventListener('click', function () {
+    console.log('Junior Rijo')
+})
+//corrigindo os erros
 
-//Exercicio
-var scroll = 1000
+/*function precisoVisitar(paisesVisitados) {
+    var totalPaises = 193;
+    return `Ainda faltam ${totalPaises - paisesVisitados} países pa
+    }
+    function jaVisitei(paisesVisitados) {
+    return `Já visitei ${paisesVisitados} do total de ${totalPaises
+    }
+    precisoVisitar(20);
+    jaVisitei(20);
+    */
+var totalPaises = 193;
 
-scroll += 500
-//DOM
+function precisoVisitar(paisesVisitados) {
+
+    return `Ainda faltam ${totalPaises - paisesVisitados} países pa`
+}
+function jaVisitei(paisesVisitados) {
+    return `Já visitei ${paisesVisitados} do total de ${totalPaises}`
+}
+//Resolução era apenas colocar a variavel fora do escopo da função.
