@@ -149,3 +149,57 @@ function jaVisitei(paisesVisitados) {
     return `Já visitei ${paisesVisitados} do total de ${totalPaises}`
 }
 //Resolução era apenas colocar a variavel fora do escopo da função.
+
+//Objetos -> é um conjunto de varáveis
+//escopo 
+var pessoa = {
+    nome: 'Junior',
+    idade:28,
+    profissao: 'Estagiário',
+}
+
+//acessando o objeto
+pessoa.idade;
+
+//metodos
+var quadrados = {
+    lados: 4,
+    area: function(lado){
+        return lado * lado
+    },
+    perimetro: function(lado){
+        return this.lados * lado;//acessando uma variavel já criada usamos o this que faz sempre referencia ao objeto.
+    }
+}
+
+//Tudo é objeto
+nome = 'Junior'
+
+//DOM PARA INICIANTES
+//Interface que representa documentos Html e Xml através de objetos, conseguimos manipular estilos e textos, window é o objeto global do browser, possui diferentes metodos.
+//o Dom ele representa o que é o final do site, por exemplo quando acessamos o inspecionar elementos. o Dom é aquele código que aparece.
+
+//window.alert('olá mundo')window e document são os metodos que mais usaremos
+//acessando o DOM 
+const h1Selencionado = document.querySelector('h1')
+//Element é o objeto que eu selecionei
+//addEventList dois principais metodos ('click', calback)
+
+function teste(){
+    console.log('Clicou em ,', h1Selencionado.innerText)
+}
+
+//adcionando o envento através do addEventListener
+h1Selencionado.addEventListener('click', teste)
+
+//Exercicios 
+//Retorne o url da página atual utilizando o objeto window
+console.log('O href da página atual é ',window.location.href)
+//selecione o primeiro elemento da pagina que possue a classe ativo.
+
+const classeAtivo = document.querySelector('.ativo');
+
+//retorne a linguagem do navegador
+const languageNavegador = window.navigator.language
+
+console.log('A linguagem do Navegador é ', languageNavegador)
